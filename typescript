@@ -1,0 +1,34 @@
+Script started on Mon Feb 17 18:43:18 2014
+[?1034hbash-3.2$ rails c -- --simple-prompt
+Loading development environment (Rails 4.0.2)
+[?1034h>> def string_shuffle(s)
+>>   s.split('').shuffle.join
+>> end
+=> nil
+>> string_shuffle("foobar")
+=> "orfboa"
+>> 
+?> class String
+>>   def shuffle
+>>     self.split('').shuffle.join
+>>   end
+>> end
+=> nil
+>> "foobar".shuffle
+=> "baroof"
+>> 
+?> person1 = {:first => "Jason",:last => "Seaver"}
+=> {:first=>"Jason", :last=>"Seaver"}
+>> person2 = {:first=>"Maggie", :last=>"Seaver"}
+=> {:first=>"Maggie", :last=>"Seaver"}
+>> person3 = {:first=>"Mike", :last=>"Seaver"}
+=> {:first=>"Mike", :last=>"Seaver"}
+>> params = {:father=>person1,:mother=>person2,:child=>person3}
+=> {:father=>{:first=>"Jason", :last=>"Seaver"}, :mother=>{:first=>"Maggie", :last=>"Seaver"}, :child=>{:first=>"Mike", :last=>"Seaver"}}
+>> params[:father][:first]
+=> "Jason"
+>> exit
+bash-3.2$ exit
+exit
+
+Script done on Mon Feb 17 18:50:16 2014
