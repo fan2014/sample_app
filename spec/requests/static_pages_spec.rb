@@ -24,8 +24,8 @@ describe "Static pages" do
     describe "pluralize micropost" do
       let(:user) { FactoryGirl.create(:user) }
       before do
-        FactoryGirl.create(:micropost, user: user, content: "Hello World!")
         sign_in user
+        FactoryGirl.create(:micropost, user: user, content: "Hello World!")
         visit root_path
       end
       it { should_not have_content("microposts")}
