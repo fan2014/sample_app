@@ -8,6 +8,19 @@ describe "Micropost pages" do
   
   before { sign_in user }
   
+  describe "pagination" do 
+    before  do 
+      51.times { FactoryGirl.create(:micropost, user: user, content: "Lorem ipsum") }
+      visit root_path
+    end
+    
+    it "should list each micropost" do
+      Micropost.paginate(page: 1).each do |m|
+        expect(page).to have_content(m.content)
+      end
+    end
+  end
+  
   describe "micropost creation" do
     before { visit root_path }
     
