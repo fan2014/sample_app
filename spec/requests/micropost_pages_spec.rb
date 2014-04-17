@@ -58,7 +58,7 @@ describe "Micropost pages" do
           visit user_path(anotherUser)
         end
         
-        it { should_not have_link('delelte') }
+        it { should_not have_link('delete') }
         
       end
     end

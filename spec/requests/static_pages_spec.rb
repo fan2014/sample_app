@@ -29,8 +29,8 @@ describe "Static pages" do
         visit root_path
       end
       it { should_not have_content("microposts")}
+      it { should have_content(user.microposts.count)}
     end
-     
     
     describe "for signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
